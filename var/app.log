@@ -1,0 +1,13 @@
+[2016-04-30 21:53:22 +0000] [11016] [INFO] Starting gunicorn 19.3.0
+[2016-04-30 21:53:22 +0000] [11016] [INFO] Listening at: http://0.0.0.0:5000 (11016)
+[2016-04-30 21:53:22 +0000] [11016] [INFO] Using worker: sync
+[2016-04-30 21:53:22 +0000] [11021] [INFO] Booting worker with pid: 11021
+[2016-04-30 21:53:22 +0000] [11022] [INFO] Booting worker with pid: 11022
+[2016-04-30 21:53:22 +0000] [11023] [INFO] Booting worker with pid: 11023
+[2016-04-30 21:53:22 +0000] [11024] [INFO] Booting worker with pid: 11024
+[2016-04-30 21:55:29 +0000] [11016] [INFO] Handling signal: term
+[2016-04-30 21:55:29 +0000] [11024] [INFO] Worker exiting (pid: 11024)
+[2016-04-30 21:55:29 +0000] [11021] [INFO] Worker exiting (pid: 11021)
+[2016-04-30 21:55:29 +0000] [11022] [INFO] Worker exiting (pid: 11022)
+[2016-04-30 21:55:29 +0000] [11023] [INFO] Worker exiting (pid: 11023)
+[2016-04-30 21:55:29 +0000] [11016] [INFO] Shutting down: Master

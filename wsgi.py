@@ -6,7 +6,8 @@ from flask import request
 import config
 import weixin
 app = Flask(__name__)
-
+username = config.username
+password = config.password
 status = [
     {
         'status': 200,
