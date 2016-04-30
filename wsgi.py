@@ -20,14 +20,19 @@ errstatus = [
         'info': '不支持GET方式'
     }
 ]
+def phone_to_weixinid(phone):
+    if phone in config.phonetoweixinid.keys():
+       return config.phonetoweixinid[phone] 
+    else:
+        return 'phone is not set in config'
+       
 
 @app.route('/', methods=['GET', 'POST'])
-def test():
+def send():
     if request.method == 'POST':
         tos = request.form.get('phone')
         content = request.form.get('content')
-        if tos == '18053514131':
-            tos = 'oaqexw-otoH-qb2AlbdbhFVi2kIE'
+        tos = phone_to_weixinid(tos)
         weixin.login(username,password)
         weixin.singlesend(tos,content)
         return jsonify({'resp':status})
