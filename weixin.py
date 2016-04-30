@@ -96,7 +96,7 @@ def masssend(content):
     return False
 
 if __name__=='__main__':
-    res=login('duhe4841384@163.com','Xlb890213')
+    res=login('','')
     print 'response: login',res
     if not res:
         sys.exit()

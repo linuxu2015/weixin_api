@@ -3,17 +3,20 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
+import config
 import weixin
 app = Flask(__name__)
 
-'''@app.route('/')
-def hello_world():
-    return '<h1>Hello World!</h1>'
-    '''
 status = [
     {
         'status': 200,
         'info': '发送成功'
+    }
+]
+errstatus = [
+    {   
+        'status': 201,
+        'info': '不支持GET方式'
     }
 ]
 
@@ -24,19 +27,13 @@ def test():
         content = request.form.get('content')
         if tos == '18053514131':
             tos = 'oaqexw-otoH-qb2AlbdbhFVi2kIE'
-        weixin.login('duhe4841384@163.com','Xlb890213')
+        weixin.login(username,password)
         weixin.singlesend(tos,content)
         return jsonify({'resp':status})
     elif request.method == 'GET':
-        data = request.args
-        print data
-        weixin.login('duhe4841384@163.com','Xlb890213')
-        weixin.singlesend(data['tos'],data['content'])
-        #weixin.singlesend('oaqexw-otoH-qb2AlbdbhFVi2kIE',msg)
-        #send_mail(data['tos'],data['content'])
-        return jsonify({'resp':status})
+        return jsonify({'resp':errstatus})
     else:
-        return 'no data'
+        return jdonigy({'resp':'unknown method'})
 
 
 if __name__ == '__main__':
